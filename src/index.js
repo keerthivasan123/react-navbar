@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import './index.css';
 import logo from './logo.png'
-import { Layout, Menu, Avatar,Input } from 'antd';
-
+import { Layout, Menu, Avatar, Switch, Button } from 'antd';
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
+  HourglassFilled,
+  SettingFilled,
   UserOutlined,
+  BellFilled,
   VideoCameraOutlined,
   UploadOutlined,
 } from '@ant-design/icons';
@@ -37,54 +39,62 @@ class SiderDemo extends React.Component {
           <Avatar size={100} src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT4A9OCZw8_C5JE790_AZw0v12xZ_sIAtgGVYphJAm53qBZQDjX&usqp=CAU" className="mx-auto d-block"/>
           <h6 className="text-center">MICHEL</h6>
         </Sider>
-        <Layout className="site-layout">
-          <Header className="site-layout-background" style={{ padding: 0 }}>
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
-            </div>
-          </nav>
+        <Layout className="site-layout pr-2">
+          <Header className="site-layout-background" style={{ padding: 2 }}>
+            <div className="p-1">
+              <h3 className="float-left light">MAINTANCE SUMMARY</h3>
+              <SettingFilled className="float-right"  style={{ fontSize: '20px',padding: 10}}/>
+              <BellFilled className="float-right"  style={{ fontSize: '20px',padding: 10}}/>
+              <UserOutlined className="float-right"  style={{ fontSize: '20px',padding: 10}}/>
+              <div className="md-form mt-0 float-right">
+                <input className="form-control" type="text" placeholder="Search" aria-label="Search"></input>
+              </div>         
+                
+        </div>
             
           </Header>
+          
           <Content
-            className="site-layout-background"
+            className="site-layout-background pt-2"
             style={{
               margin: 0,
-              padding: 0,
               minHeight: 500,
             }}
-          >
-            Content
+          >  
+          <hr style={{margin:0, padding:0}}></hr>
+          
+          <div className="pt-1" style={{width: '100%', height: 55}}>
+            <div className="float-left pr-5 mr-4">
+            <HourglassFilled style={{ fontSize: '35px',padding: 10, color: 'pink'}} className="float-left align-middle"/>
+            <h6 className="float-left align-middle pr-2 pt-3">Aircraft Down</h6>
+            <div className="float-left pt-3">
+              <Switch  size="small" />
+            </div>
+            </div>
+            <div className="float-left pr-5 mr-4 ">
+            <HourglassFilled style={{ fontSize: '35px',padding: 10, color: 'yellow'}} className="float-left align-middle"/>
+            <h6 className="float-left align-middle pr-2 pt-3">Inseption Down</h6>
+            <div className="float-left pt-3">
+              <Switch  size="small" />
+            </div>
+            
+            </div>
+            <div className="float-left pr-5 mr-4 ">
+            <HourglassFilled style={{ fontSize: '35px',padding: 10, color: 'green'}} className="float-left align-middle"/>
+            <h6 className="float-left align-middle pr-2 pt-3">Aircraft Up</h6>
+            <div className="float-left pt-3">
+              <Switch  size="small" />
+            </div>
+            </div>
+          </div>
+          <div className="pt-1 ecosystem" style={{width: '100%', height: 55}}>
+          <h3 className="float-left ecosystem pl-2 pt-1 align-middle">Ecosystem</h3>
+          <div className="float-right pr-2 pt-1 align-middle">
+          <Button  size='large' className="findEcosystem">
+          Find-Ecosystem
+          </Button>
+          </div>
+          </div>
           </Content>
         </Layout>
       </Layout>
