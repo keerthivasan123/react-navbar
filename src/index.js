@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
 import "./index.css";
 import logo from "./logo.png";
-import { Layout, Menu, Avatar, Switch, Button } from "antd";
+import { Layout, Avatar, Switch, Button } from "antd";
 import {
   StarFilled,
   SettingFilled,
